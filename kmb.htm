@@ -1,0 +1,27 @@
+<html>
+
+<head>
+<script>
+
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+function onLoad() {
+    window.top.location.href='https://kmb-kmbgroup.rhcloud.com' + getParameterByName("q");
+}
+
+</script>
+
+</head>
+
+<body onload="onLoad()">
+
+    <p>Please wait while you are being redirected to KMB</p>
+
+</body>
+
+</html>
